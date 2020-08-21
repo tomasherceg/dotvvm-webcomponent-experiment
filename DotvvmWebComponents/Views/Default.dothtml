@@ -1,0 +1,15 @@
+﻿@viewModel DotvvmWebComponents.ViewModels.DefaultViewModel, DotvvmWebComponents
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+	<fast-design-system-provider use-defaults>
+
+		<fast-text-field appearance="filled" 
+						 placeholder="user@email.com" 
+						 Fast.Value="{value: Test}" />
+
+	</fast-design-system-provider>
+
+	<dot:TextBox Text="{value: Test}" />
+
+</dot:Content>
