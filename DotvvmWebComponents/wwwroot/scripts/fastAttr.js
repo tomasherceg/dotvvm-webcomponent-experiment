@@ -24,7 +24,6 @@ ko.bindingHandlers["fast-attr"] = {
                 element.removeAttribute(attrName);
             }
             else {
-                //element[attrName] = attrValue.toString();
                 element[attrName] = attrValue.toString();
             }
         });
