@@ -4,12 +4,68 @@
 
 	<fast-design-system-provider use-defaults>
 
-		<fast-text-field appearance="filled" 
-						 placeholder="user@email.com" 
-						 Fast.Bind-value="{value: Test}"/>
+		<h2>TextBox</h2>
+
+		<fast-text-field appearance="filled"
+						 placeholder="user@email.com"
+						 Fast.Bind-value="{value: Test}" />
+		<fast-text-area appearance="filled"
+						placeholder="user@email.com"
+						Fast.Bind-value="{value: Test}" />
+		<dot:TextBox Text="{value: Test}" />
+
+		<hr />
+
+		<h2>CheckBox</h2>
+
+		<fast-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fast-checkbox>
+		<fast-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fast-checkbox>
+
+		<dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
+		<dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
+
+		<hr />
+
+		<h2>RadioButton</h2>
+
+		<p>Doesn't support two-way data-binding for value</p>
+
+		<fast-radio-group aria-labelledby="radiogroup" name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
+			<fast-radio value="ice-man">Ice Man</fast-radio>
+			<fast-radio value="maverick">Maverick</fast-radio>
+			<fast-radio value="viper">Viper</fast-radio>
+			<fast-radio value="jester">Jester</fast-radio>
+		</fast-radio-group>
+
+		<dot:RadioButton GroupName="best-pilot2" Text="Ice Man" CheckedValue="ice-man" CheckedItem="{value: RadioSelection}" />
+		<dot:RadioButton GroupName="best-pilot2" Text="Maverick" CheckedValue="maverick" CheckedItem="{value: RadioSelection}" />
+		<dot:RadioButton GroupName="best-pilot2" Text="Viper" CheckedValue="viper" CheckedItem="{value: RadioSelection}" />
+		<dot:RadioButton GroupName="best-pilot2" Text="Jester" CheckedValue="jester" CheckedItem="{value: RadioSelection}" />
+
+		<hr />
+
+		<h2>Slider</h2>
+
+		<fast-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
+			<fast-slider-label position="0">0</fast-slider-label>
+			<fast-slider-label position="100">100</fast-slider-label>
+		</fast-slider>
+
+		<dot:TextBox Text="{value: SliderValue}" />
+
+		<hr />
+
+		<h2>Dialog</h2>
+
+		<fast-dialog id="example1" class="example-dialog" aria-label="Simple modal dialog" modal="true" Fast.Bind-hidden="{value: IsDialogVisible}">
+			<h2>Dialog</h2>
+			<p>This is an example dialog.</p>
+			<fast-button Events.Click="{staticCommand: IsDialogVisible = "hidden"}">Close Dialog</fast-button>
+		</fast-dialog>
+
+		<fast-button appearance="primary" Events.Click="{staticCommand: IsDialogVisible = null}"></fast-button>
 
 	</fast-design-system-provider>
 
-	<dot:TextBox Text="{value: Test}" />
 
 </dot:Content>
