@@ -44,12 +44,16 @@
 
 		<hr />
 
-		<h2>Slider</h2>
+		<h2>Slider &amp; ProgressBar</h2>
 
 		<fast-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
 			<fast-slider-label position="0">0</fast-slider-label>
 			<fast-slider-label position="100">100</fast-slider-label>
 		</fast-slider>
+
+		<fast-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress>
+
+		<fast-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress-ring>
 
 		<dot:TextBox Text="{value: SliderValue}" />
 
