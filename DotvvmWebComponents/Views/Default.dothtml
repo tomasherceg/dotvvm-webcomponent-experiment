@@ -6,7 +6,7 @@
 
 		<fast-text-field appearance="filled" 
 						 placeholder="user@email.com" 
-						 Fast.Value="{value: Test}" />
+						 Fast.Bind-value="{value: Test}"/>
 
 	</fast-design-system-provider>
 

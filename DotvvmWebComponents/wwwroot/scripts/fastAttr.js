@@ -16,6 +16,17 @@ ko.bindingHandlers["fast-attr"] = {
         });
     },
     update(element, valueAccessor, allBindings, viewModel, bindingContext) {
-        ko.bindingHandlers['attr']['update'](element, valueAccessor, allBindings, viewModel, bindingContext);
+        const value = ko.unwrap(valueAccessor()) || {};
+        ko.utils.objectForEach(value, function (attrName, attrValue) {
+            attrValue = ko.utils.unwrapObservable(attrValue);
+
+            if ((attrValue === false) || (attrValue === null) || (attrValue === undefined)) {
+                element.removeAttribute(attrName);
+            }
+            else {
+                //element[attrName] = attrValue.toString();
+                element[attrName] = attrValue.toString();
+            }
+        });
     }
 }

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotvvmWebComponents", "DotvvmWebComponents\DotvvmWebComponents.csproj", "{6D9FB2B5-923A-4FAC-8E13-6A4E40DB837D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotvvmWebComponents", "DotvvmWebComponents\DotvvmWebComponents.csproj", "{6D9FB2B5-923A-4FAC-8E13-6A4E40DB837D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotvvm", "dotvvm", "{2584F8AA-D3C6-475A-93F0-8D5ECAA0E141}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.Core", "dotvvm\src\DotVVM.Core\DotVVM.Core.csproj", "{3F98BBF4-9120-4656-88C8-9B47D5062445}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.Framework", "dotvvm\src\DotVVM.Framework\DotVVM.Framework.csproj", "{8661CEF0-C05A-4EF5-91A9-C43A88F8FECE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.Framework.Hosting.AspNetCore", "dotvvm\src\DotVVM.Framework.Hosting.AspNetCore\DotVVM.Framework.Hosting.AspNetCore.csproj", "{AEEC99B9-5D0F-4BBD-BB00-4451B65F0183}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,26 @@ Global
 		{6D9FB2B5-923A-4FAC-8E13-6A4E40DB837D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D9FB2B5-923A-4FAC-8E13-6A4E40DB837D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D9FB2B5-923A-4FAC-8E13-6A4E40DB837D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F98BBF4-9120-4656-88C8-9B47D5062445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F98BBF4-9120-4656-88C8-9B47D5062445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F98BBF4-9120-4656-88C8-9B47D5062445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F98BBF4-9120-4656-88C8-9B47D5062445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8661CEF0-C05A-4EF5-91A9-C43A88F8FECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8661CEF0-C05A-4EF5-91A9-C43A88F8FECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8661CEF0-C05A-4EF5-91A9-C43A88F8FECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8661CEF0-C05A-4EF5-91A9-C43A88F8FECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEEC99B9-5D0F-4BBD-BB00-4451B65F0183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEEC99B9-5D0F-4BBD-BB00-4451B65F0183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEEC99B9-5D0F-4BBD-BB00-4451B65F0183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEEC99B9-5D0F-4BBD-BB00-4451B65F0183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F98BBF4-9120-4656-88C8-9B47D5062445} = {2584F8AA-D3C6-475A-93F0-8D5ECAA0E141}
+		{8661CEF0-C05A-4EF5-91A9-C43A88F8FECE} = {2584F8AA-D3C6-475A-93F0-8D5ECAA0E141}
+		{AEEC99B9-5D0F-4BBD-BB00-4451B65F0183} = {2584F8AA-D3C6-475A-93F0-8D5ECAA0E141}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F25D8E9C-687F-4F82-9A17-536482B16031}

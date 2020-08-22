@@ -13,22 +13,19 @@ namespace DotvvmWebComponents.Extensions
     public class Fast
     {
 
-        [AttachedProperty(typeof(bool))]
-        public static readonly DotvvmProperty ValueProperty 
-            = DelegateActionProperty<object>.Register<Fast>("Value", AddValueProperty);
+        [AttachedProperty(typeof(object))]
+        [PropertyGroup("Bind-")]
+        public static DotvvmPropertyGroup BindGroupDescriptor =
+            DelegateActionPropertyGroup<object>.Register<Fast>("Bind-", "Bind", AddBindProperty);
 
-        private static void AddValueProperty(IHtmlWriter writer, IDotvvmRequestContext context, DotvvmProperty property, DotvvmControl control)
+        private static void AddBindProperty(IHtmlWriter writer, IDotvvmRequestContext context, DotvvmPropertyGroup group, DotvvmControl control, IEnumerable<DotvvmProperty> properties)
         {
-            if (control is HtmlGenericControl htmlControl && htmlControl.TagName == "fast-text-field")
+            var bindingGroup = new KnockoutBindingGroup();
+            foreach (var prop in properties)
             {
-                var group = new KnockoutBindingGroup();
-                group.Add("value", control, property);
-                writer.AddKnockoutDataBind("fast-attr", group);
+                bindingGroup.Add(prop.Name.Split(':')[1], control, prop);
             }
-            else
-            {
-                throw new DotvvmControlException(control, "$The Fast.Value property is not supported on this control.");
-            }
+            writer.AddKnockoutDataBind("fast-attr", bindingGroup);
         }
     }
 }

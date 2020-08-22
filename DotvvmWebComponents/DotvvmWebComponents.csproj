@@ -10,7 +10,6 @@
     <None Remove="dotvvm_serialized_config.json.tmp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DotVVM.AspNetCore" Version="2.4.0.1" />
-
+    <ProjectReference Include="..\dotvvm\src\DotVVM.Framework.Hosting.AspNetCore\DotVVM.Framework.Hosting.AspNetCore.csproj" />
   </ItemGroup>
 </Project>
