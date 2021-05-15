@@ -9,7 +9,7 @@ using DotVVM.Framework.Hosting;
 
 namespace DotvvmWebComponents.ViewModels
 {
-    public class DefaultViewModel : MasterPageViewModel
+    public class DefaultViewModel : DotvvmViewModelBase
     {
         public string Test { get; set; } = "aaa";
 

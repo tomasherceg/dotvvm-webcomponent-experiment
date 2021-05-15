@@ -1,75 +1,87 @@
 ﻿@viewModel DotvvmWebComponents.ViewModels.DefaultViewModel, DotvvmWebComponents
-@masterPage Views/MasterPage.dotmaster
-<dot:Content ContentPlaceHolderID="MainContent">
 
-	<fast-design-system-provider use-defaults>
+<!DOCTYPE html>
 
-		<h2>TextBox</h2>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>DotvvmWebComponents</title>
 
-		<fast-text-field appearance="filled"
-						 placeholder="user@email.com"
-						 Fast.Bind-value="{value: Test}" />
-		<fast-text-area appearance="filled"
-						placeholder="user@email.com"
-						Fast.Bind-value="{value: Test}" />
-		<dot:TextBox Text="{value: Test}" />
+    <script type="module" src="https://unpkg.com/@microsoft/fast-components"></script>
+</head>
+<body>
+    <script type="module">
+        import * as bindAttr from "./scripts/fastAttr.js"
+    </script>
 
-		<hr />
+    <fast-design-system-provider use-defaults>
 
-		<h2>CheckBox</h2>
+        <h2>TextBox</h2>
 
-		<fast-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fast-checkbox>
-		<fast-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fast-checkbox>
+        <fast-text-field appearance="filled"
+                         placeholder="user@email.com"
+                         Fast.Bind-value="{value: Test}" />
+        <fast-text-area appearance="filled"
+                        placeholder="user@email.com"
+                        Fast.Bind-value="{value: Test}" />
+        <dot:TextBox Text="{value: Test}" />
 
-		<dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
-		<dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
+        <hr />
 
-		<hr />
+        <h2>CheckBox</h2>
 
-		<h2>RadioButton</h2>
+        <fast-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fast-checkbox>
+        <fast-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fast-checkbox>
 
-		<p>Doesn't support two-way data-binding for value</p>
+        <dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
+        <dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
 
-		<fast-radio-group aria-labelledby="radiogroup" name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
-			<fast-radio value="ice-man">Ice Man</fast-radio>
-			<fast-radio value="maverick">Maverick</fast-radio>
-			<fast-radio value="viper">Viper</fast-radio>
-			<fast-radio value="jester">Jester</fast-radio>
-		</fast-radio-group>
+        <hr />
 
-		<dot:RadioButton GroupName="best-pilot2" Text="Ice Man" CheckedValue="ice-man" CheckedItem="{value: RadioSelection}" />
-		<dot:RadioButton GroupName="best-pilot2" Text="Maverick" CheckedValue="maverick" CheckedItem="{value: RadioSelection}" />
-		<dot:RadioButton GroupName="best-pilot2" Text="Viper" CheckedValue="viper" CheckedItem="{value: RadioSelection}" />
-		<dot:RadioButton GroupName="best-pilot2" Text="Jester" CheckedValue="jester" CheckedItem="{value: RadioSelection}" />
+        <h2>RadioButton</h2>
 
-		<hr />
+        <fast-radio-group aria-labelledby="radiogroup" name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
+            <fast-radio value="ice-man">Ice Man</fast-radio>
+            <fast-radio value="maverick">Maverick</fast-radio>
+            <fast-radio value="viper">Viper</fast-radio>
+            <fast-radio value="jester">Jester</fast-radio>
+        </fast-radio-group>
 
-		<h2>Slider &amp; ProgressBar</h2>
+        <dot:RadioButton GroupName="best-pilot2" Text="Ice Man" CheckedValue="ice-man" CheckedItem="{value: RadioSelection}" />
+        <dot:RadioButton GroupName="best-pilot2" Text="Maverick" CheckedValue="maverick" CheckedItem="{value: RadioSelection}" />
+        <dot:RadioButton GroupName="best-pilot2" Text="Viper" CheckedValue="viper" CheckedItem="{value: RadioSelection}" />
+        <dot:RadioButton GroupName="best-pilot2" Text="Jester" CheckedValue="jester" CheckedItem="{value: RadioSelection}" />
 
-		<fast-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
-			<fast-slider-label position="0">0</fast-slider-label>
-			<fast-slider-label position="100">100</fast-slider-label>
-		</fast-slider>
+        <hr />
 
-		<fast-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress>
+        <h2>Slider &amp; ProgressBar</h2>
 
-		<fast-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress-ring>
+        <fast-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
+            <fast-slider-label position="0">0</fast-slider-label>
+            <fast-slider-label position="100">100</fast-slider-label>
+        </fast-slider>
 
-		<dot:TextBox Text="{value: SliderValue}" />
+        <fast-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress>
 
-		<hr />
+        <fast-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress-ring>
 
-		<h2>Dialog</h2>
+        <dot:TextBox Text="{value: SliderValue}" />
 
-		<fast-dialog id="example1" class="example-dialog" aria-label="Simple modal dialog" modal="true" Fast.Bind-hidden="{value: IsDialogVisible}">
-			<h2>Dialog</h2>
-			<p>This is an example dialog.</p>
-			<fast-button Events.Click="{staticCommand: IsDialogVisible = "hidden"}">Close Dialog</fast-button>
-		</fast-dialog>
+        <hr />
 
-		<fast-button appearance="primary" Events.Click="{staticCommand: IsDialogVisible = null}"></fast-button>
+        <h2>Dialog</h2>
 
-	</fast-design-system-provider>
+        <fast-dialog ID="example1" class="example-dialog" aria-label="Simple modal dialog" modal="true" Fast.Bind-hidden="{value: IsDialogVisible}">
+            <h2>Dialog</h2>
+            <p>This is an example dialog.</p>
+            <fast-button Events.Click="{staticCommand: IsDialogVisible = "hidden"}">Close Dialog</fast-button>
+        </fast-dialog>
 
+        <fast-button appearance="primary" Events.Click="{staticCommand: IsDialogVisible = null}"></fast-button>
 
-</dot:Content>
+    </fast-design-system-provider>
+
+    <dot:RequiredResource Name="globalize" />
+
+</body>
+</html>
