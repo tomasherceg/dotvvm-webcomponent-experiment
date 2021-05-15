@@ -1,0 +1,113 @@
+﻿@viewModel DotvvmWebComponents.ViewModels.FluentUI.BasicInputsViewModel, DotvvmWebComponents
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style type="text/css">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <fluent-design-system-provider use-defaults>
+
+        <h1>Button, Badge</h1>
+
+        <fluent-button appearance="accent" Events.Click="{staticCommand: Count = Count + 1}">Increment</fluent-button>
+        <fluent-button appearance="neutral" Events.Click="{staticCommand: Count = Count - 1}">Decrement</fluent-button>
+
+        <fluent-badge appearance="accent" InnerText="{value: Count}"></fluent-badge>
+        <fluent-badge appearance="lightweight">{{value: Count}}</fluent-badge>
+
+        <hr />
+
+        <h2>CheckBox, Toggle</h2>
+
+        <fluent-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-checkbox>
+        <fluent-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-checkbox>
+        <br />
+        <fluent-switch Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-switch>
+        <fluent-switch Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-switch>
+        <br />
+        <dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
+        <dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
+
+        <hr />
+
+        <h2>RadioButton</h2>
+
+        <fluent-radio-group name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
+            <fluent-radio value="ice-man">Ice Man</fluent-radio>
+            <fluent-radio value="maverick">Maverick</fluent-radio>
+            <fluent-radio value="viper">Viper</fluent-radio>
+            <fluent-radio value="jester">Jester</fluent-radio>
+        </fluent-radio-group>
+
+        <dot:RadioButton GroupName="best-pilot2" Text="Ice Man" CheckedValue="ice-man" CheckedItem="{value: RadioSelection}" />
+        <dot:RadioButton GroupName="best-pilot2" Text="Maverick" CheckedValue="maverick" CheckedItem="{value: RadioSelection}" />
+        <dot:RadioButton GroupName="best-pilot2" Text="Viper" CheckedValue="viper" CheckedItem="{value: RadioSelection}" />
+        <dot:RadioButton GroupName="best-pilot2" Text="Jester" CheckedValue="jester" CheckedItem="{value: RadioSelection}" />
+
+        <hr />
+
+        <h2>TextBox</h2>
+
+        <fluent-text-field Fast.Bind-value="{value: Text}" />
+        <fluent-text-area Fast.Bind-value="{value: Text}" />
+        <dot:TextBox Text="{value: Text}" />
+
+        <hr />
+
+        <h2>Slider &amp; ProgressBar</h2>
+
+        <fluent-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
+            <fluent-slider-label position="0">0</fluent-slider-label>
+            <fluent-slider-label position="100">100</fluent-slider-label>
+        </fluent-slider>
+
+        <p>&nbsp;</p>
+
+        <fluent-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}" />
+
+        <fluent-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}" />
+
+        <dot:TextBox Text="{value: SliderValue}" />
+
+        <hr />
+
+        <h2>Select</h2>
+
+        <fluent-select Fast.Bind-value="{value: ComboBoxSelection}" Fast.Options="{value: ComboBoxOptions}" placeholder="Please select a song"></fluent-select>
+
+        <fluent-select Fast.Bind-value="{value: ComboBoxSelection}" placeholder="Please select a song">
+            <fluent-option>Please Please Me</fluent-option>
+            <fluent-option>With The Beatles</fluent-option>
+            <fluent-option>A Hard Day's Night</fluent-option>
+            <fluent-option>Beatles for Sale</fluent-option>
+            <fluent-option>Help!</fluent-option>
+            <fluent-option>Rubber Soul</fluent-option>
+            <fluent-option>Revolver</fluent-option>
+            <fluent-option>Sgt. Pepper's Lonely Hearts Club Band</fluent-option>
+            <fluent-option>Magical Mystery Tour</fluent-option>
+            <fluent-option>The Beatles</fluent-option>
+            <fluent-option>Yellow Submarine</fluent-option>
+            <fluent-option>Abbey Road</fluent-option>
+            <fluent-option>Let It Be</fluent-option>
+        </fluent-select>
+
+        <dot:ComboBox DataSource="{value: ComboBoxOptions}" SelectedValue="{value: ComboBoxSelection}" />
+
+
+    </fluent-design-system-provider>
+
+    <dot:RequiredResource Name="globalize" />
+    <dot:RequiredResource Name="fluentui-bundle" />
+</body>
+</html>
+
+

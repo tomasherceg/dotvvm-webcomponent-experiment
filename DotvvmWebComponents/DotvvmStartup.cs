@@ -29,7 +29,14 @@ namespace DotvvmWebComponents
 
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
-            
+            config.Resources.Register("fast-bundle", new ScriptModuleResource(new UrlResourceLocation("~/fast-bundle.js"))
+            {
+                Dependencies = new [] { "dotvvm" }
+            });
+            config.Resources.Register("fluentui-bundle", new ScriptModuleResource(new UrlResourceLocation("~/fluentui-bundle.js"))
+            {
+                Dependencies = new[] { "dotvvm" }
+            });
         }
 
 		public void ConfigureServices(IDotvvmServiceCollection options)

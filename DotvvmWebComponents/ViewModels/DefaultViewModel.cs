@@ -19,7 +19,7 @@ namespace DotvvmWebComponents.ViewModels
 
         public string RadioSelection { get; set; } = "maverick";
 
-        public string SliderValue { get; set; } = "10";
+        public int SliderValue { get; set; } = 10;
 
         public string IsDialogVisible { get; set; } = "hidden";
     }

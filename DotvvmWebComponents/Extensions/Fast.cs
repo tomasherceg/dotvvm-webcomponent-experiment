@@ -3,6 +3,7 @@ using DotVVM.Framework.Compilation.ControlTree;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.Hosting;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,5 +28,25 @@ namespace DotvvmWebComponents.Extensions
             }
             writer.AddKnockoutDataBind("fast-attr", bindingGroup);
         }
+
+        [AttachedProperty(typeof(IEnumerable))]
+        public static DotvvmProperty OptionsProperty =
+            DelegateActionProperty<IEnumerable>.Register<Fast>("Options", AddOptionsProperty);
+
+        private static void AddOptionsProperty(IHtmlWriter writer, IDotvvmRequestContext context, DotvvmProperty property, DotvvmControl control)
+        {
+            writer.AddKnockoutDataBind("fast-options", control, property);
+        }
+
+
+        [AttachedProperty(typeof(object))]
+        public static DotvvmProperty RowsDataProperty =
+            DelegateActionProperty<object>.Register<Fast>("RowsData", AddRowsDataProperty);
+
+        private static void AddRowsDataProperty(IHtmlWriter writer, IDotvvmRequestContext context, DotvvmProperty property, DotvvmControl control)
+        {
+            writer.AddKnockoutDataBind("fast-rowsData", control, property);
+        }
+
     }
 }

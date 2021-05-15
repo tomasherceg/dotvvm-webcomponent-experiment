@@ -8,8 +8,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="dotvvm_serialized_config.json.tmp" />
+    <None Remove="Scripts\binding-handlers\fast-options.js" />
+    <None Remove="Scripts\binding-handlers\fast-rowsData.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\binding-handlers\fast-rowsData.js" />
+    <Content Include="Scripts\binding-handlers\fast-options.js" />
+    <Content Include="Scripts\binding-handlers\fast-attr.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dotvvm\src\DotVVM.Framework.Hosting.AspNetCore\DotVVM.Framework.Hosting.AspNetCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 </Project>
