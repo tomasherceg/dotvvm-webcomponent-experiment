@@ -18,21 +18,31 @@
 
         <h1>Button, Badge</h1>
 
-        <fluent-button appearance="accent" Events.Click="{staticCommand: Count = Count + 1}">Increment</fluent-button>
-        <fluent-button appearance="neutral" Events.Click="{staticCommand: Count = Count - 1}">Decrement</fluent-button>
+        <%--<fluent-button appearance="accent" Events.Click="{staticCommand: Count = Count + 1}">Increment</fluent-button>
+        <fluent-button appearance="neutral" Events.Click="{staticCommand: Count = Count - 1}">Decrement</fluent-button>--%>
+        <fluent:Button Text="Increment" Appearance="Accent" Click="{staticCommand: Count = Count + 1}" />
+        <fluent:Button Text="Decrement" Appearance="Neutral" Click="{staticCommand: Count = Count - 1}" />
 
-        <fluent-badge appearance="accent" InnerText="{value: Count}"></fluent-badge>
-        <fluent-badge appearance="lightweight">{{value: Count}}</fluent-badge>
+        <%--<fluent-badge appearance="accent" InnerText="{value: Count}"></fluent-badge>
+        <fluent-badge>{{value: Count}}</fluent-badge>--%>
+        <fluent:Badge Appearance="Accent" Text="{value: Count.ToString()}" />
+        <fluent:Badge Text="{value: Count.ToString()}" />
 
         <hr />
 
         <h2>CheckBox, Toggle</h2>
 
-        <fluent-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-checkbox>
-        <fluent-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-checkbox>
+        <%--<fluent-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-checkbox>
+        <fluent-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-checkbox>--%>
+        <fluent:CheckBox Checked="{value: IsChecked1}">Option 1</fluent:CheckBox>
+        <fluent:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
+
         <br />
-        <fluent-switch Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-switch>
-        <fluent-switch Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-switch>
+        <%--<fluent-switch Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-switch>
+        <fluent-switch Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-switch>--%>
+        <fluent:Switch checked="{value: IsChecked1}">Option 1</fluent:Switch>
+        <fluent:Switch checked="{value: IsChecked2}">Option 2</fluent:Switch>
+
         <br />
         <dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
         <dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
@@ -41,12 +51,19 @@
 
         <h2>RadioButton</h2>
 
-        <fluent-radio-group name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
+        <%--<fluent-radio-group name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
             <fluent-radio value="ice-man">Ice Man</fluent-radio>
             <fluent-radio value="maverick">Maverick</fluent-radio>
             <fluent-radio value="viper">Viper</fluent-radio>
             <fluent-radio value="jester">Jester</fluent-radio>
-        </fluent-radio-group>
+        </fluent-radio-group>--%>
+
+        <fluent:RadioGroup GroupName="best-pilot" Value="{value: RadioSelection}">
+            <fluent:Radio Value="ice-man">Ice Man</fluent:Radio>
+            <fluent:Radio Value="maverick">Maverick</fluent:Radio>
+            <fluent:Radio Value="viper">Viper</fluent:Radio>
+            <fluent:Radio Value="jester">Jester</fluent:Radio>
+        </fluent:RadioGroup>
 
         <dot:RadioButton GroupName="best-pilot2" Text="Ice Man" CheckedValue="ice-man" CheckedItem="{value: RadioSelection}" />
         <dot:RadioButton GroupName="best-pilot2" Text="Maverick" CheckedValue="maverick" CheckedItem="{value: RadioSelection}" />
@@ -57,24 +74,31 @@
 
         <h2>TextBox</h2>
 
-        <fluent-text-field Fast.Bind-value="{value: Text}" />
-        <fluent-text-area Fast.Bind-value="{value: Text}" />
+        <%--<fluent-text-field Fast.Bind-value="{value: Text}" />
+        <fluent-text-area Fast.Bind-value="{value: Text}" />--%>
+        <fluent:TextField Text="{value: Text}" />
+        <fluent:TextArea Text="{value: Text}" />
         <dot:TextBox Text="{value: Text}" />
 
         <hr />
 
         <h2>Slider &amp; ProgressBar</h2>
 
-        <fluent-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
+        <%--<fluent-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
             <fluent-slider-label position="0">0</fluent-slider-label>
             <fluent-slider-label position="100">100</fluent-slider-label>
-        </fluent-slider>
+        </fluent-slider>--%>
+        <fluent:Slider Min="0" Max="100" Step="10" Value="{value: SliderValue}">
+            <fluent:SliderLabel Position="0">0</fluent:SliderLabel>
+            <fluent:SliderLabel Position="100" Text="100" />
+        </fluent:Slider>
 
         <p>&nbsp;</p>
 
-        <fluent-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}" />
-
-        <fluent-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}" />
+        <%--<fluent-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}" />
+        <fluent-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}" />--%>
+        <fluent:Progress Min="0" Max="100" Value="{value: SliderValue}" />
+        <fluent:ProgressRing Min="0" Max="100" Value="{value: SliderValue}" />
 
         <dot:TextBox Text="{value: SliderValue}" />
 
@@ -82,7 +106,7 @@
 
         <h2>Select</h2>
 
-        <fluent-select Fast.Bind-value="{value: ComboBoxSelection}" Fast.Options="{value: ComboBoxOptions}" placeholder="Please select a song"></fluent-select>
+        <%--<fluent-select Fast.Bind-value="{value: ComboBoxSelection}" Fast.Options="{value: ComboBoxOptions}" placeholder="Please select a song"></fluent-select>
 
         <fluent-select Fast.Bind-value="{value: ComboBoxSelection}" placeholder="Please select a song">
             <fluent-option>Please Please Me</fluent-option>
@@ -100,8 +124,30 @@
             <fluent-option>Let It Be</fluent-option>
         </fluent-select>
 
+        <dot:Repeater Fast.Bind-value="{value: ComboBoxSelection}" DataSource="{value: ComboBoxOptions}" placeholder="Please select a song"
+                      WrapperTagName="fluent-select" RenderSettings.Mode="Server">
+            <fluent-option>{{value: _this}}</fluent-option>
+        </dot:Repeater>--%>
+
+        <fluent:Select SelectedValue="{value: ComboBoxSelection}" DataSource="{value: ComboBoxOptions}"
+                       ItemTextBinding="{value: _this}" ItemValueBinding="{value: _this}" />
+
         <dot:ComboBox DataSource="{value: ComboBoxOptions}" SelectedValue="{value: ComboBoxSelection}" />
 
+        <dot:Button Text="Add repeater item" Click="{command: ComboBoxOptions.Add("potvora")}" />
+
+        <hr />
+
+        <%--<fluent-card>
+            <h3>Card title</h3>
+            <p>At purus lectus quis habitant commodo, cras. Aliquam malesuada velit a tortor. Felis orci tellus netus risus et ultricies augue aliquet.</p>
+            <fluent-button>Learn more</fluent-button>
+        </fluent-card>--%>
+        <fluent:Card>
+            <h3>Card title</h3>
+            <p>At purus lectus quis habitant commodo, cras. Aliquam malesuada velit a tortor. Felis orci tellus netus risus et ultricies augue aliquet.</p>
+            <fluent-button>Learn more</fluent-button>
+        </fluent:Card>
 
     </fluent-design-system-provider>
 

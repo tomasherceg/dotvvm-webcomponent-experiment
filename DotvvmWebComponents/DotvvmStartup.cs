@@ -1,6 +1,7 @@
 ﻿using DotVVM.Framework.Configuration;
 using DotVVM.Framework.ResourceManagement;
 using DotVVM.Framework.Routing;
+using DotvvmWebComponents.Controls;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DotvvmWebComponents
@@ -10,7 +11,6 @@ namespace DotvvmWebComponents
         // For more information about this class, visit https://dotvvm.com/docs/tutorials/basics-project-structure
         public void Configure(DotvvmConfiguration config, string applicationPath)
         {
-
             ConfigureRoutes(config, applicationPath);
             ConfigureControls(config, applicationPath);
             ConfigureResources(config, applicationPath);
@@ -25,6 +25,7 @@ namespace DotvvmWebComponents
         private void ConfigureControls(DotvvmConfiguration config, string applicationPath)
         {
             // register code-only controls and markup controls
+            config.Markup.AddCodeControls("fluent", typeof(Button));
         }
 
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
