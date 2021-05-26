@@ -5,78 +5,43 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>DotvvmWebComponents</title>
+    <title></title>
+
+    <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+
+    <style type="text/css">
+        html, body {
+            margin: 0px;
+            padding: 0px;
+        }
+        fluent-design-system-provider {
+            padding: 1em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <fast-design-system-provider use-defaults>
 
-        <h2>TextBox</h2>
+    <fluent-design-system-provider use-defaults 
+        background-color="{value: DarkMode ? "#000000" : "#ffffff"}">
 
-        <fast-text-field appearance="filled"
-                         placeholder="user@email.com"
-                         Fast.Bind-value="{value: Test}" />
-        <fast-text-area appearance="filled"
-                        placeholder="user@email.com"
-                        Fast.Bind-value="{value: Test}" />
-        <dot:TextBox Text="{value: Test}" />
+        <fluent-select value="With The Beatles" 
+                       placeholder="Please select a song">
+            <fluent-option>Please Please Me</fluent-option>
+            <fluent-option>With The Beatles</fluent-option>
+            <fluent-option>A Hard Day's Night</fluent-option>
+            <fluent-option>Beatles for Sale</fluent-option>
+        </fluent-select>
 
-        <hr />
+        <fluent-button Events.Click="{staticCommand: DarkMode = !DarkMode}"
+                       >Switch mode</fluent-button> 
 
-        <h2>CheckBox</h2>
+        <p><dot:RouteLink RouteName="FluentUI_BasicInputs">More Fluent UI samples</dot:RouteLink></p>
 
-        <fast-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fast-checkbox>
-        <fast-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fast-checkbox>
-
-        <dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
-        <dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
-
-        <hr />
-
-        <h2>RadioButton</h2>
-
-        <fast-radio-group aria-labelledby="radiogroup" name="best-pilot" Fast.Bind-value="{value: RadioSelection}">
-            <fast-radio value="ice-man">Ice Man</fast-radio>
-            <fast-radio value="maverick">Maverick</fast-radio>
-            <fast-radio value="viper">Viper</fast-radio>
-            <fast-radio value="jester">Jester</fast-radio>
-        </fast-radio-group>
-
-        <dot:RadioButton GroupName="best-pilot2" Text="Ice Man" CheckedValue="ice-man" CheckedItem="{value: RadioSelection}" />
-        <dot:RadioButton GroupName="best-pilot2" Text="Maverick" CheckedValue="maverick" CheckedItem="{value: RadioSelection}" />
-        <dot:RadioButton GroupName="best-pilot2" Text="Viper" CheckedValue="viper" CheckedItem="{value: RadioSelection}" />
-        <dot:RadioButton GroupName="best-pilot2" Text="Jester" CheckedValue="jester" CheckedItem="{value: RadioSelection}" />
-
-        <hr />
-
-        <h2>Slider &amp; ProgressBar</h2>
-
-        <fast-slider min="0" max="100" step="10" Fast.Bind-value="{value: SliderValue}">
-            <fast-slider-label position="0">0</fast-slider-label>
-            <fast-slider-label position="100">100</fast-slider-label>
-        </fast-slider>
-
-        <fast-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress>
-
-        <fast-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}"></fast-progress-ring>
-
-        <dot:TextBox Text="{value: SliderValue}" />
-
-        <hr />
-
-        <h2>Dialog</h2>
-
-        <fast-dialog ID="example1" class="example-dialog" aria-label="Simple modal dialog" modal="true" Fast.Bind-hidden="{value: IsDialogVisible}">
-            <h2>Dialog</h2>
-            <p>This is an example dialog.</p>
-            <fast-button Events.Click="{staticCommand: IsDialogVisible = "hidden"}">Close Dialog</fast-button>
-        </fast-dialog>
-
-        <fast-button appearance="primary" Events.Click="{staticCommand: IsDialogVisible = null}"></fast-button>
-
-    </fast-design-system-provider>
-
-    <dot:RequiredResource Name="globalize" />
-    <dot:RequiredResource Name="fast-bundle" />
+    </fluent-design-system-provider>
 
 </body>
 </html>
+
+

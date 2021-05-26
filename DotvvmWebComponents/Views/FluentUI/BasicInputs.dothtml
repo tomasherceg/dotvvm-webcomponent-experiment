@@ -20,13 +20,17 @@
 
         <%--<fluent-button appearance="accent" Events.Click="{staticCommand: Count = Count + 1}">Increment</fluent-button>
         <fluent-button appearance="neutral" Events.Click="{staticCommand: Count = Count - 1}">Decrement</fluent-button>--%>
+        
         <fluent:Button Text="Increment" Appearance="Accent" Click="{staticCommand: Count = Count + 1}" />
         <fluent:Button Text="Decrement" Appearance="Neutral" Click="{staticCommand: Count = Count - 1}" />
 
+
         <%--<fluent-badge appearance="accent" InnerText="{value: Count}"></fluent-badge>
         <fluent-badge>{{value: Count}}</fluent-badge>--%>
+        
         <fluent:Badge Appearance="Accent" Text="{value: Count.ToString()}" />
         <fluent:Badge Text="{value: Count.ToString()}" />
+
 
         <hr />
 
@@ -34,20 +38,25 @@
 
         <%--<fluent-checkbox Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-checkbox>
         <fluent-checkbox Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-checkbox>--%>
+        
         <fluent:CheckBox Checked="{value: IsChecked1}">Option 1</fluent:CheckBox>
         <fluent:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
 
         <br />
+
         <%--<fluent-switch Fast.Bind-checked="{value: IsChecked1}">Option 1</fluent-switch>
         <fluent-switch Fast.Bind-checked="{value: IsChecked2}">Option 2</fluent-switch>--%>
+        
         <fluent:Switch checked="{value: IsChecked1}">Option 1</fluent:Switch>
         <fluent:Switch checked="{value: IsChecked2}">Option 2</fluent:Switch>
 
         <br />
+
         <dot:CheckBox Checked="{value: IsChecked1}" Text="Option 1" />
         <dot:CheckBox Checked="{value: IsChecked2}" Text="Option 2" />
 
         <hr />
+
 
         <h2>RadioButton</h2>
 
@@ -72,15 +81,18 @@
 
         <hr />
 
+
         <h2>TextBox</h2>
 
         <%--<fluent-text-field Fast.Bind-value="{value: Text}" />
         <fluent-text-area Fast.Bind-value="{value: Text}" />--%>
+
         <fluent:TextField Text="{value: Text}" />
         <fluent:TextArea Text="{value: Text}" />
         <dot:TextBox Text="{value: Text}" />
 
         <hr />
+
 
         <h2>Slider &amp; ProgressBar</h2>
 
@@ -88,6 +100,7 @@
             <fluent-slider-label position="0">0</fluent-slider-label>
             <fluent-slider-label position="100">100</fluent-slider-label>
         </fluent-slider>--%>
+
         <fluent:Slider Min="0" Max="100" Step="10" Value="{value: SliderValue}">
             <fluent:SliderLabel Position="0">0</fluent:SliderLabel>
             <fluent:SliderLabel Position="100" Text="100" />
@@ -97,12 +110,14 @@
 
         <%--<fluent-progress min="0" max="100" Fast.Bind-value="{value: SliderValue}" />
         <fluent-progress-ring min="0" max="100" Fast.Bind-value="{value: SliderValue}" />--%>
+
         <fluent:Progress Min="0" Max="100" Value="{value: SliderValue}" />
         <fluent:ProgressRing Min="0" Max="100" Value="{value: SliderValue}" />
 
         <dot:TextBox Text="{value: SliderValue}" />
 
         <hr />
+
 
         <h2>Select</h2>
 
@@ -143,6 +158,7 @@
             <p>At purus lectus quis habitant commodo, cras. Aliquam malesuada velit a tortor. Felis orci tellus netus risus et ultricies augue aliquet.</p>
             <fluent-button>Learn more</fluent-button>
         </fluent-card>--%>
+
         <fluent:Card>
             <h3>Card title</h3>
             <p>At purus lectus quis habitant commodo, cras. Aliquam malesuada velit a tortor. Felis orci tellus netus risus et ultricies augue aliquet.</p>
