@@ -1,4 +1,0 @@
-﻿@viewModel System.Object, mscorlib
-@baseType DotVVM.Samples.Common.Views.FeatureSamples.MarkupControl.Control1, DotVVM.Samples.Common
-
-<sample:Control2 MyProperty="{controlProperty: MyProperty}"/>

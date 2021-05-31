@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "DotVVM.Tools.StartupPerfTester": {
-      "commandName": "Project",
-      "commandLineArgs": "-t owin -r 1"
-    }
-  }
-}

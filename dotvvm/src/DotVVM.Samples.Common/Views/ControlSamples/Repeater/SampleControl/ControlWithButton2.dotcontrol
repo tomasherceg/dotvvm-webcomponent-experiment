@@ -1,7 +1,0 @@
-﻿@viewModel System.Object, mscorlib
-@baseType DotVVM.Samples.Common.Views.ControlSamples.Repeater.SampleControl.ControlWithButton2
-
-<div>
-    <dot:Button Text="GGG"
-                Click="{controlCommand: OnGoToDetail()}" />
-</div>
